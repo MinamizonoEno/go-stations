@@ -13,15 +13,15 @@ type HealthzHandler struct{}
 
 // NewHealthzHandler returns HealthzHandler based http.Handler.
 func NewHealthzHandler() *HealthzHandler {
-    return &HealthzHandler{}
+	return &HealthzHandler{}
 }
 
 // ServeHTTP implements http.Handler interface.
 func (h *HealthzHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
-    response := &model.HealthzResponse{Message: "OK"}
+	response := &model.HealthzResponse{Message: "OK"}
 
-    w.Header().Set("Content-Type", "application/json")
-    if err := json.NewEncoder(w).Encode(response); err != nil {
-        log.Println(err)
-    }
+	w.Header().Set("Content-Type", "application/json")
+	if err := json.NewEncoder(w).Encode(response); err != nil {
+		log.Println(err)
+	}
 }

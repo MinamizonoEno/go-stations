@@ -16,6 +16,6 @@ func NewRouter(todoDB *sql.DB) *http.ServeMux {
 
 	// Register the /healthz endpoint
 	mux.Handle("/healthz", healthzHandler)
-	
+
 	return mux
 }
